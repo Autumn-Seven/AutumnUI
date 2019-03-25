@@ -1,45 +1,52 @@
 /**
  * Created by fight on 2019/3/4.
  */
-const webpack = require('webpack')
-const path = require('path')
+const path = require('path');
+const webpack = require('webpack');
+const vueLoaderConfig = require('./vue-loader.conf')
+
 
 module.exports = {
-  entry: {
-    'kting': './src/comps/index.js'
-  },
-  output: {
-    path: path.resolve(__dirname, '../package'),
-    publicPath: '/package',
-    library: 'kting',
-  },
-  module: {
-    loaders: [{
-      test: '/\.vue$/',
-      loader: 'vue-loader',
-      options: {
-        loaders: {
-          css: 'vue-style-loder!css-loader',
-          sass: 'vue-style-loder!css-loader!sass-loader'
-        },
-        postLoaders: {
-          html: 'babel-loader'
+    entry: {
+        'kting': './src/comps/index.js'
+    },
+    output: {
+        path: path.resolve(__dirname, '../package'),
+        publicPath: '/package/',
+        library: 'kting',
+        libraryTarget: 'umd',
+        // umdNamedDefine: true
+    },
+    externals: {
+        vue: {
+            root: 'Vue',
+            commonjs: 'vue',
+            commonjs2: 'vue',
+            amd: 'vue'
         }
-      }
-    }, {
-      test: /\.js$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'autoprefixer-loader'
-      ]
-    }, {
-      test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-      loader: 'url-loader?limit=8000'
-    }]
-  },
-  plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin()
+    },
+    module: {
+        loaders: [{
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            options: vueLoaderConfig
+        }, {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/
+        }, {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader'
+            ]
+        }, {
+            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+            loader: 'url-loader?limit=8000'
+        }]
+    },
+    plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin()
 
-  ]
+    ]
 }
