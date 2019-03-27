@@ -1,0 +1,197 @@
+/**
+ * Created by Seven on 2019/3/26.
+ * project: kting
+ * email: fighting20xx@126.com
+ */
+
+//profix
+$css-profix: kting-;
+
+//颜色
+$primiary-color: #2d8cf0; //一般交互颜色 （按钮，信息，提示，弹出）
+$info-color: #2db7f5;
+$success-color: #19be6b;
+$warning-color: #ff9900;
+$error-color: #ed3f14;
+
+$plain-color: #fff;                    //平板色，panel
+$transparent-color: transparent;       // 透明色
+
+$link-color: #2D8cF0l;                     //原有的  链接，输入框 交互色
+$link-hover-hover: tint($link-color, 20%);
+$link-active-hover: shade($link-color, 5%);
+$selected-color: fade($primiary-color, 90%);
+
+$tooltip-color: #fff;          //工具提示
+$subsidiary-color: #80848f;     //附加色
+$rate-star-color: #f5a623;      //星星色
+
+
+//--------------------------------------------------------------------------------
+//基础
+$body-background : #fff;
+$title-color: #1c2438;
+$text-color: #495060;
+$text-color-light: #fff;
+$close-color: #878c99;
+$base-color: #19be6b;
+$font-size-big: 1.8rem;
+$font-size-base: 1.6rem;
+$font-size-small: 1.4rem;
+$line-height-base: 1.5;
+$line-height-small: 1.2;
+$line-height-computed: floor($font-size-base * $line-height-base);       //这里的实际行高，应该是字体大小 *  line-height数字
+
+$cursor-disabled: not-allowed;
+
+
+
+//边框
+
+$border-radius-base: 6px;
+$border-radius-small: 4px;
+$border-color-base:  #dddee1;       //outside  为什么边框颜色还要分内部还有外部？暂时不去分析
+$border-color-split: #e9eaec;        //inside
+$border-width-default: 1px;
+$border-style-default: solid;
+
+//背景色
+$background-color-base: #f7f7f7;
+$tooltip-bg : rgba(70, 76, 91, .9);
+$head-bg: #f9fafc;
+
+
+$table-thead-bg: #f8f8f9;
+$table-td-ctrip-bg: #f8f8f9;
+$table-td-hover-bg: #ebf7ff;
+$table-td-highlight-bg: #ebf7ff;
+
+
+$menu-dark-title: #495060;
+$menu-dark-active-bg: #363e4f;
+$menu-dark-subsidiary-color: rgba(255,255,255,.7);
+$menu-dark-grop-title-color: rgba(255,255,255,.36);
+$date-picker-cell-hover-bg: #e1f0fe;
+$skeleton-bg: #D8D8D8;
+
+
+
+//动画
+$ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
+
+$ease-out-back       : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back        : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back    : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+
+$ease-out-circ       : cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ        : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ    : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+
+$ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
+
+
+//按钮组
+$btn-font-weight: normal;
+$btn-padding-base: 6px 15px;
+$btn-padding-large: 6px 15px 7px 15px;
+$btn-padding-small: 2px 7px ;
+
+$btn-font-size: 12px;
+$btn-font-size-large: 14px;
+
+$btn-border-radius: 4px;
+$btn-border-radius-small: 3px;
+
+
+$btn-disable-color: #bbbec4;
+$btn-disable-bg: $background-color-base;
+$btn-disable-border: $border-color-base;
+
+
+$btn-default-color: $text-color;
+$btn-default-bg: $background-color-base;
+$btn-default-border: $border-color-base;
+
+$btn-primary-color: $text-color-light;
+$btn-primary-bg: $primiary-color;
+$btn-primary-border: $border-color-base;
+
+$btn-success-color      : $text-color-light;
+$btn-success-bg         : $success-color;
+$btn-success-border     : $border-color-base;
+
+$btn-warning-color      : $text-color-light;
+$btn-warning-bg         : $warning-color;
+$btn-warning-border     : $border-color-base;
+
+$btn-error-color        : $text-color-light;
+$btn-error-bg           : $error-color;
+$btn-error-border       : $border-color-base;
+
+$btn-plain-color        : $text-color;         //简约 平板按钮
+$btn-plain-bg           : $plain-color;
+$btn-plain-border       : $border-color-base;
+
+$btn-text-color         : $text-color;          // 文字按钮，无边框的那种
+$btn-text-bg            : $transparent-color;
+$btn-text-border        : $border-color-base;
+
+$btn-circle-size: 28px;
+$btn-circle-size-lg: 32px;
+$btn-circle-size-sm: 22px;
+
+
+
+
+//Media
+
+
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+
+
+//Layout and Grid
+$grid-columns: 24;
+$grid-gutter-width: 0;
+
+
+
+//z-index
+
+$zindex-affix: 10;
+$zindex-modal-mask: 990;         //遮罩层，弹出面板的背景层
+$zindex-popover: 1000;
+$zindex-notification: 1010;
+$zindex-message:1010;
+$zindex-modal: 1030;
+$zindex-picker: 1050;
+$zindex-dropdowm: 1050;
+$zindex-tooltip:1060;
+$zindex-loading:1070;
+
+
+
+
+//表单
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
