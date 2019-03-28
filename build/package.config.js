@@ -8,12 +8,12 @@ const vueLoaderConfig = require('./vue-loader.conf')
 
 module.exports = {
     entry: {
-        'kting': './src/comps/index.js'
+        'autumn': './src/comps/index.js'
     },
     output: {
         path: path.resolve(__dirname, '../package'),
         publicPath: '/package/',
-        library: 'kting',
+        library: 'autumn',
         libraryTarget: 'umd',
         // umdNamedDefine: true
     },

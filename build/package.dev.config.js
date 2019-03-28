@@ -6,7 +6,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const basewebpackConfig = require('./package.config')
 const ExtractTestPlugin = require('extract-text-webpack-plugin')
-const extractScss = new ExtractTestPlugin('/kting.min.css')
+const extractScss = new ExtractTestPlugin('/autumn.min.css')
 
 module.export = merge(basewebpackConfig, {
     output: {
