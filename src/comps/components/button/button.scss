@@ -1,4 +1,162 @@
+$btn-pre: #{$css-profix}btn;
 
-.kting-btn{
-  background: red;
+
+.#{$btn-pre}{
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    line-height: 1;
+    -webkit-appearance: none; //chrome 可以用这个属性吧div显示为  按钮，其他浏览器不支持
+    margin: 0;
+    padding: 12px 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(191, 203, 217);
+    border-image: initial;
+    border-radius: 4px;
+
+    color: $text-color;
+    background: rgb(255, 255, 255);
+    font-size: $font-size-base;
+    cursor: pointer;
+
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.5;
+        pointer-events: none; //这个属性很牛呀， 当设置为none的时候， 禁止所有的鼠标事件，
+    }
+
+    &:hover,
+    &:active {
+        text-decoration: none; //文本显示样式， 有的连接点击过之后就有一个中划线。
+        opacity: 0.8;
+    }
 }
+
+.#{$btn-pre}--default {
+    color: $btn-default-color;
+    background: $btn-default-bg;
+    border: $border-width-default $border-style-default $border-color-base;
+    @include border-radius;
+
+    &.is-round {
+        @include border-radius(20px);
+    }
+
+    &.is-long {
+        @include size(100%, auto);
+    }
+
+    &.no-radius {
+        @include border-radius(0);
+    }
+}
+
+
+@mixin buttonType($color, $background) {
+    @extend .autumn__btn--default;
+    color: $color;
+    background: $background;
+    border: $border-width-default $border-style-default $background;
+
+    &:hover,
+    &:active {
+        background-color: $background;
+        color: $text-light-color;
+        border-color: $background;
+    }
+}
+
+.#{$btn-pre}--primary {
+    @include buttonType($btn-primary-color, $btn-primary-bg)
+}
+
+.#{$btn-pre}--info {
+    @include buttonType($btn-info-color, $btn-info-bg)
+}
+
+.#{$btn-pre}--success {
+    @include buttonType($btn-success-color, $btn-success-bg)
+}
+
+.#{$btn-pre}--warning {
+    @include buttonType($btn-warning-color, $btn-warning-bg)
+}
+
+.#{$btn-pre}--error {
+    @include buttonType($btn-error-color, $btn-error-bg)
+}
+
+.#{$btn-pre}--group {
+    position: relative;
+    display: flex;
+    vertical-align: middle;
+
+    & button{
+        flex: 0;
+        border-radius: 0;
+    }
+    & button:first-child{
+        @include border-radius();
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+    }
+    & button:last-child{
+        @include border-radius;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+    }
+}
+
+
+.#{$btn-pre}--hasIcon{
+    padding: 11px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@
   "description": "a frontend ui built with Vue",
   "author": "seven li <liwy@mingdutech.com>",
   "private": true,
-  "main": "package/kting.min.js",
+  "main": "package/autumn.min.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "autoprefixer-loader": "^3.2.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

@@ -1,11 +1,11 @@
 /**
  * Created by Seven on 2019/3/26.
- * project: kting
+ * project: autumn
  * email: fighting20xx@126.com
  */
 
 //profix
-$css-profix: kting-;
+$css-profix: autumn__;
 
 //颜色
 $primiary-color: #2d8cf0; //一般交互颜色 （按钮，信息，提示，弹出）
@@ -14,7 +14,7 @@ $success-color: #19be6b;
 $warning-color: #ff9900;
 $error-color: #ed3f14;
 
-$plain-color: #fff;                    //平板色，panel
+$plain-color: #fff;                    //平板色，panel,
 $transparent-color: transparent;       // 透明色
 
 $link-color: #2D8cF0l;                     //原有的  链接，输入框 交互色
@@ -32,7 +32,7 @@ $rate-star-color: #f5a623;      //星星色
 $body-background : #fff;
 $title-color: #1c2438;
 $text-color: #495060;
-$text-color-light: #fff;
+$text-light-color: #fff;
 $close-color: #878c99;
 $base-color: #19be6b;
 $font-size-big: 1.8rem;
@@ -94,6 +94,9 @@ $ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
 $ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
 
 
+
+
+
 //按钮组
 $btn-font-weight: normal;
 $btn-padding-base: 6px 15px;
@@ -116,25 +119,25 @@ $btn-default-color: $text-color;
 $btn-default-bg: $background-color-base;
 $btn-default-border: $border-color-base;
 
-$btn-primary-color: $text-color-light;
+$btn-primary-color: $text-light-color;
 $btn-primary-bg: $primiary-color;
 $btn-primary-border: $border-color-base;
 
-$btn-success-color      : $text-color-light;
+$btn-info-color: $text-light-color;
+$btn-info-bg: $info-color;
+$btn-info-border: $border-color-base;
+
+$btn-success-color      : $text-light-color;
 $btn-success-bg         : $success-color;
 $btn-success-border     : $border-color-base;
 
-$btn-warning-color      : $text-color-light;
+$btn-warning-color      : $text-light-color;
 $btn-warning-bg         : $warning-color;
 $btn-warning-border     : $border-color-base;
 
-$btn-error-color        : $text-color-light;
+$btn-error-color        : $text-light-color;
 $btn-error-bg           : $error-color;
 $btn-error-border       : $border-color-base;
-
-$btn-plain-color        : $text-color;         //简约 平板按钮
-$btn-plain-bg           : $plain-color;
-$btn-plain-border       : $border-color-base;
 
 $btn-text-color         : $text-color;          // 文字按钮，无边框的那种
 $btn-text-bg            : $transparent-color;
@@ -147,9 +150,8 @@ $btn-circle-size-sm: 22px;
 
 
 
+
 //Media
-
-
 $screen-xs: 480px;
 $screen-sm: 768px;
 $screen-md: 992px;

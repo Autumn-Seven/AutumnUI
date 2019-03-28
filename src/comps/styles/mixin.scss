@@ -1,6 +1,6 @@
 /**
  * Created by Seven on 2019/3/27.
- * project: kting
+ * project: autumn
  * email: fighting20xx@126.com
  */
 
@@ -42,11 +42,11 @@
 @mixin flex(){
     display: flex;
     align-items: center;
-    & .keing__flex--item{
+    & .autumn__flex--item{
         flex: 1;
     }
 
-    & .kting__flex--vertical {
+    & .autumn__flex--vertical {
         flex-direction: column;
         height: 100%;
     }

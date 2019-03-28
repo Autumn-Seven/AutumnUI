@@ -7,7 +7,7 @@ const merge = require('webpack-merge')
 const config = require('../config')
 const baseWebpackConfig = require('./package.config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractScss = new ExtractTextPlugin('kting.min.css')
+const extractScss = new ExtractTextPlugin('autumn.min.css')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 

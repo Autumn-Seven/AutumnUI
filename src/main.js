@@ -3,8 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import AutnmnUI from '@/comps/index.js'
 
 Vue.config.productionTip = false
+
+
+Vue.use(AutnmnUI);
 
 /* eslint-disable no-new */
 new Vue({
