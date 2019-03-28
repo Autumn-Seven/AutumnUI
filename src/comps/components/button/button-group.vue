@@ -6,7 +6,7 @@
 
 
 <template>
-    <div class="autunm__btn--group"><slot></slot></div>
+    <div class="autumn__btn--group"><slot></slot></div>
 </template>
 <script>
 	export default {

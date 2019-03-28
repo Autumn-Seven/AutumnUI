@@ -3,13 +3,16 @@
  */
 
 import './styles/index.scss'
-import button from './components/button'
+import button from './components/button/button.vue'
+import buttonGroup from './components/button/button-group'
+
 
 
 
 
 const components = [
     button,
+	buttonGroup,
 ];
 
 

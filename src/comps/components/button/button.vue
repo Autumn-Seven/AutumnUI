@@ -2,9 +2,12 @@
     <button
             class="autumn__btn"
             @click="handleClick"
-            :style="{backgroundColor: bgColor, color: color, 'border-color': borderColor}"
+            :style="{'backgroundColor': bgColor, 'color': color, 'borderColor': borderColor}"
             :class="showClass"
-    ><slot></slot></button>
+            :disabled="disabled"
+    >
+        <span class="iconfont " :class="'icon-'+icon"></span>
+        <slot></slot></button>
 </template>
 <script>
 	export default {
@@ -23,15 +26,16 @@
 				type: Boolean,
 				default: false
 			},
-			bgColor: {
-				type: String,
-				default: ''
-			},
+
 			icon: {
 				type: String,
 				default: ''
 			},
 			color: {
+				type: String,
+				default: ''
+			},
+			bgColor: {
 				type: String,
 				default: ''
 			},

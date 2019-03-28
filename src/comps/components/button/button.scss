@@ -20,24 +20,31 @@ $btn-pre: #{$css-profix}btn;
     font-size: $font-size-base;
     cursor: pointer;
 
-    &[disabled] {
-        cursor: not-allowed;
-        opacity: 0.5;
-        pointer-events: none; //这个属性很牛呀， 当设置为none的时候， 禁止所有的鼠标事件，
-    }
-
     &:hover,
     &:active {
         text-decoration: none; //文本显示样式， 有的连接点击过之后就有一个中划线。
         opacity: 0.8;
     }
-}
 
-.#{$btn-pre}--default {
-    color: $btn-default-color;
-    background: $btn-default-bg;
-    border: $border-width-default $border-style-default $border-color-base;
-    @include border-radius;
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.5;
+        :before{                  //为什么要这么做呢？  因为pointer-events: none;  和cursor: not-allowed; 冲突， 禁用所有事件了，鼠标样式不显示，所以来个遮罩层
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            bottom: -1px;
+            right: -1px;
+            background: #fff;
+            opacity: .35;
+            content: "";
+            border-radius: inherit;
+            z-index: 1;
+            transition: opacity .2s;
+            pointer-events: none;   //这个属性很牛呀， 当设置为none的时候， 禁止所有的鼠标事件，
+            display: none;
+        }
+    }
 
     &.is-round {
         @include border-radius(20px);
@@ -50,11 +57,12 @@ $btn-pre: #{$css-profix}btn;
     &.no-radius {
         @include border-radius(0);
     }
+    @include border-radius;
 }
 
 
+
 @mixin buttonType($color, $background) {
-    @extend .autumn__btn--default;
     color: $color;
     background: $background;
     border: $border-width-default $border-style-default $background;
@@ -66,25 +74,34 @@ $btn-pre: #{$css-profix}btn;
         border-color: $background;
     }
 }
-
+.#{$btn-pre}--default {
+    @include buttonType($btn-default-color, $btn-default-bg);
+    &:hover,
+    &:active {
+        color: $text-color;
+    }
+}
 .#{$btn-pre}--primary {
     @include buttonType($btn-primary-color, $btn-primary-bg)
 }
-
 .#{$btn-pre}--info {
     @include buttonType($btn-info-color, $btn-info-bg)
 }
-
 .#{$btn-pre}--success {
     @include buttonType($btn-success-color, $btn-success-bg)
 }
-
 .#{$btn-pre}--warning {
     @include buttonType($btn-warning-color, $btn-warning-bg)
 }
-
 .#{$btn-pre}--error {
     @include buttonType($btn-error-color, $btn-error-bg)
+}
+.#{$btn-pre}--text {
+    @include buttonType($btn-text-color, $btn-text-bg);
+    &:hover,
+    &:active {
+        color: $text-color;
+    }
 }
 
 .#{$btn-pre}--group {
@@ -92,17 +109,17 @@ $btn-pre: #{$css-profix}btn;
     display: flex;
     vertical-align: middle;
 
-    & button{
-        flex: 0;
+    &>button{
+        flex: 1;
         border-radius: 0;
     }
-    & button:first-child{
+    &>button:first-child{
         @include border-radius();
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         border-right: none;
     }
-    & button:last-child{
+    &>button:last-child{
         @include border-radius;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
@@ -112,51 +129,5 @@ $btn-pre: #{$css-profix}btn;
 
 
 .#{$btn-pre}--hasIcon{
-    padding: 11px 20px;
+    //padding: 11px 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
