@@ -1,5 +1,7 @@
 <template>
     <div class="hello">
+
+        <h4>按钮</h4>
         <autumn-button>默认</autumn-button>
         <autumn-button type="primary">primary</autumn-button>
         <autumn-button type="info">info</autumn-button>
@@ -25,6 +27,21 @@
             <autumn-button type="success" icon="camera"  >item332132132</autumn-button>
         </antumn-button-group>
 
+        <h4>标签</h4>
+        <autumn-tag>默认</autumn-tag>
+        <autumn-tag type="primary">primary</autumn-tag>
+        <autumn-tag type="info">info</autumn-tag>
+        <autumn-tag type="success" >success</autumn-tag>
+        <autumn-tag type="warning" >warning</autumn-tag>
+        <autumn-tag type="error" >error</autumn-tag>
+
+        <br><br>
+        <autumn-tag borderColor="#132441" color="green" >默认</autumn-tag>
+        <autumn-tag type="primary" bgColor="#662530">primary</autumn-tag>
+        <autumn-tag type="info">info</autumn-tag>
+        <autumn-tag type="success" noRadius>success</autumn-tag>
+        <autumn-tag type="warning" round>warning</autumn-tag>
+        <autumn-tag type="error" closeable>error</autumn-tag>
 
 
         <br><br>
@@ -52,8 +69,9 @@
 </template>
 
 <script>
+	import AutumnTag from "../comps/components/tag/tag";
 	export default {
-		name: 'home',
+		components: {AutumnTag}, name: 'home',
 		data () {
 			return {
 				msg: 'Welcome'
@@ -63,5 +81,10 @@
 </script>
 
 <style scoped>
-
+    h4{
+        background-color: azure;
+        text-align: left;
+        font-size: 15px;
+        padding: 5px 15px;
+    }
 </style>

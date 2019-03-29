@@ -5,6 +5,7 @@
 import './styles/index.scss'
 import button from './components/button/button.vue'
 import buttonGroup from './components/button/button-group'
+import Tag from './components/tag/tag.vue'
 
 
 
@@ -13,6 +14,7 @@ import buttonGroup from './components/button/button-group'
 const components = [
     button,
 	buttonGroup,
+	Tag,
 ];
 
 
