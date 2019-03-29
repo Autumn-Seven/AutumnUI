@@ -1,0 +1,64 @@
+/**
+ * Created by Seven on 2019/3/29.
+ * project: AutumnUI
+ * email: fighting20xx@126.com
+ */
+
+$gird-pre: #{$css-profix}grid;
+
+
+@for $number from 1 through 12 {
+    .#{$gird-pre}s--#{$number} .#{$gird-pre}{
+        width: percentage( 1 / $number );
+    }
+}
+
+.#{$gird-pre}s{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+
+
+
+
+    & .#{$gird-pre} {
+        position: relative;
+        padding: 10px;
+        box-sizing: border-box;
+
+
+        &:before {
+            content: " ";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1px;
+            bottom: 0;
+            border-right: $border-width-default $border-style-default $border-color-base;
+            color: $text-color;
+            transform-origin: 100% 0;
+            transform: scaleX(0.5);
+        }
+
+        &:after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            border-bottom: $border-width-default $border-style-default $border-color-base;
+            color: $text-color;
+            transform-origin: 0 100%;
+            transform: scaleY(0.5);
+        }
+    }
+
+
+
+
+}
+
+

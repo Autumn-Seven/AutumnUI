@@ -8,6 +8,8 @@ import buttonGroup from './components/button/button-group'
 import Tag from './components/tag/tag.vue'
 import Radio from './components/radio/radio.vue'
 import Input from './components/input/input.vue'
+import Grid from './components/grid/grid.vue'
+import Grids from './components/grid/grids.vue'
 
 
 
@@ -19,6 +21,8 @@ const components = [
 	Tag,
 	Radio,
 	Input,
+	Grid,
+	Grids,
 ];
 
 

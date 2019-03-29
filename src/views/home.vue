@@ -46,7 +46,31 @@
         <h4>表单</h4>
         <autumn-radio >error</autumn-radio>
         <autumn-input >error</autumn-input>
-        <label>123123213</label>
+
+
+        <h4>图标</h4>
+        <autumn-grids :row="6">
+            <autumn-grid><i class="iconfont icon-close"></i>123</autumn-grid>
+            <autumn-grid>46456</autumn-grid>
+            <autumn-grid>1243143</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+            <autumn-grid>34234</autumn-grid>
+        </autumn-grids>
+
         <br><br>
         <br><br>
         <br><br>
