@@ -43,7 +43,10 @@
         <autumn-tag type="warning" round>warning</autumn-tag>
         <autumn-tag type="error" closeable>error</autumn-tag>
 
-
+        <h4>表单</h4>
+        <autumn-radio >error</autumn-radio>
+        <autumn-input >error</autumn-input>
+        <label>123123213</label>
         <br><br>
         <br><br>
         <br><br>

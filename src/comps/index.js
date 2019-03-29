@@ -6,6 +6,8 @@ import './styles/index.scss'
 import button from './components/button/button.vue'
 import buttonGroup from './components/button/button-group'
 import Tag from './components/tag/tag.vue'
+import Radio from './components/radio/radio.vue'
+import Input from './components/input/input.vue'
 
 
 
@@ -15,6 +17,8 @@ const components = [
     button,
 	buttonGroup,
 	Tag,
+	Radio,
+	Input,
 ];
 
 
