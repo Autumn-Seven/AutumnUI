@@ -4,32 +4,53 @@
  * email: fighting20xx@126.com
  */
 
-$gird-pre: #{$css-profix}grid;
+$gird: #{$css-profix}grid;
 
 
 @for $number from 1 through 12 {
-    .#{$gird-pre}s--#{$number} .#{$gird-pre}{
+    .#{$gird}s--#{$number} .#{$gird}{
         width: percentage( 1 / $number );
     }
 }
 
-.#{$gird-pre}s{
+.#{$gird}s{
     position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     overflow: hidden;
 
+    &:before,
+    &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $text-color;
+        transform-origin: 0 0;
+    }
+
+    &:before {
+        right: 0;
+        height: 1px;
+        border-top: $border-width-default $border-style-default $border-color-base;
+        transform: scaleY(0.5);
+    }
+    &:after {
+        width: 1px;
+        bottom: 0;
+        border-left: $border-width-default $border-style-default $border-color-base;
+        transform: scaleX(0.5);
+    }
 
 
-
-    & .#{$gird-pre} {
+    & .#{$gird} {
         position: relative;
-        padding: 10px;
+        padding: 12px;
         box-sizing: border-box;
 
 
-        &:before {
+        &:before {                     // 为了做边框
             content: " ";
             position: absolute;
             right: 0;
@@ -53,6 +74,28 @@ $gird-pre: #{$css-profix}grid;
             color: $text-color;
             transform-origin: 0 100%;
             transform: scaleY(0.5);
+        }
+
+
+        & .#{$gird}--icon {
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4px 0;
+            font-size: 50px;
+            color: $text-color;
+        }
+
+        & .#{$gird}--text {
+            word-wrap: normal;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+            color: $text-color;
+            font-size: $font-size-small;
+
         }
     }
 
