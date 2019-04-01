@@ -3,3 +3,38 @@
  * project: AutumnUI
  * email: fighting20xx@126.com
  */
+
+
+$gird: #{$css-profix}radio;
+
+
+.#{$gird}--group{
+    width: 100%;
+    position: relative;
+    vertical-align: middle;
+    line-height: normal;
+    text-align: left;
+
+    & .#{$gird}{
+        width: 100%;
+        display: flex;
+        position: relative;
+
+        & > input[type=radio] {
+            position: absolute;
+            //left: -9999px;
+
+
+        }
+
+
+        &.horizontal {
+            display: inline-block;
+            padding-right: 10px;
+            width: auto;
+            white-space: nowrap;
+        }
+
+    }
+
+}

@@ -44,7 +44,19 @@
         <autumn-tag type="error" closeable>error</autumn-tag>
 
         <h4>表单</h4>
-        <autumn-radio >error</autumn-radio>
+        <autumn-radio v-model="radio">error</autumn-radio>
+
+        <autumn-radio-group v-model="radio2">
+            <autumn-radio label="1">error</autumn-radio>
+            <autumn-radio label="2">error</autumn-radio>
+        </autumn-radio-group>
+
+        <autumn-radio-group v-model="radio2" horizontal>
+            <autumn-radio label="1">error</autumn-radio>
+            <autumn-radio label="2">error</autumn-radio>
+        </autumn-radio-group>
+
+        <autumn-radio v-model="radio2">error</autumn-radio>
         <autumn-input >error</autumn-input>
 
 
@@ -91,8 +103,13 @@
 			return {
 				msg: 'Welcome',
                 iconList:iconList,
+                radio:true,
+                radio2:'2',
 			}
 		},
+        computed:{
+
+        },
         mounted (){
 
 
