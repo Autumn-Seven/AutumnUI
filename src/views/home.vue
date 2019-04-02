@@ -46,10 +46,12 @@
         <h4>表单</h4>
         <autumn-radio v-model="radio">error</autumn-radio>
 
+
         <autumn-radio-group v-model="radio2">
             <autumn-radio label="1">error</autumn-radio>
             <autumn-radio label="2">error</autumn-radio>
         </autumn-radio-group>
+
 
         <autumn-radio-group v-model="radio2" horizontal>
             <autumn-radio label="1">error</autumn-radio>
@@ -103,7 +105,7 @@
 			return {
 				msg: 'Welcome',
                 iconList:iconList,
-                radio:true,
+                radio:false,
                 radio2:'2',
 			}
 		},

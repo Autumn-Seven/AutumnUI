@@ -2,6 +2,7 @@
  * Created by fight on 2019/3/4.
  */
 
+import emitter from './mixins/emitter'
 import './styles/index.scss'
 import button from './components/button/button.vue'
 import buttonGroup from './components/button/button-group'
@@ -27,10 +28,16 @@ const components = [
 	Grids,
 ];
 
+console.log(button);
 
 const install = function (Vue) {
     if(install.installed) return;
-    components.map(component => Vue.component(component.name, component))
+    // components.map(component => Vue.component(component.name, component))
+												// 为什么不用这种方式而用下一种方式？  因为要混合一个全局方法， 而又不影响 使用Autumn的全局Vue属性
+												// 这里只是对所有的AutumnUI 的组件混入了 
+
+
+    components.map(component => Vue.component(component.name, Vue.extend({mixins:[emitter]}).extend(component)))
 }
 
 if(typeof window !=='undefined' && window.Vue){

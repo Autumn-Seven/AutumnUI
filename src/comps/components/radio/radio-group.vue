@@ -24,7 +24,7 @@
             },
             name: {
             	type: [String, Number],
-                default:util.gid16(),
+                default:util.gsid,
             },
 			horizontal:Boolean,
         },
@@ -52,6 +52,7 @@
                 this.updateValue();
                 this.$emit('input',data.value);
                 this.$emit('on-change',data.value);
+                this.dispatch()
 
             }
         }

@@ -70,7 +70,8 @@
             }
         },
         watch:{
-        	value(val){
+			currentValue(val){
+
         		if(val === this.trueValue || val ===this.falseValue){
         			this.updateValue();
                 }else {
@@ -96,7 +97,21 @@
         },
         methods:{
             onChange(event){
-            	this.$parent.change && this.$parent.change({value:this.label, checked:this.currentValue});
+            	if(this.disabled) return false;
+
+            	const checked = event.target.checked;
+            	this.currentValue = checked;
+            	const value = checked ? this.trueValue: falseValue;
+            	this.$emit('input',value);
+
+            	if(this.group){
+					this.$parent.change({value:this.label, checked:this.currentValue});
+                }else {
+					this.$emit('on-change', value);
+                }
+
+
+
             },
             onClick(event){
             	if(this.disabled) return;
