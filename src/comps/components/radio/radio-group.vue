@@ -5,7 +5,7 @@
  */ 
 
 <template>
-   <div :class=" preFixCla">
+   <div :class="classes">
        <slot></slot>
    </div>
 </template>
@@ -30,13 +30,25 @@
         },
         data(){
 		    return {
-				preFixCla:preFixCla+'radio--group',
+				preFixCla:preFixCla+'radio',
 				currentValue: this.value,
                 childrens:[],
             }
         },
         computed:{
-
+            classes(){
+            	return [
+					this.preFixCla+'-group',
+				]
+            }
+        },
+        watch:{
+			value:function (val) {
+                this.currentValue = val;
+			},
+			currentValue:function () {
+                this.updateValue();
+			},
         },
         methods:{
 			updateValue(){
@@ -51,9 +63,8 @@
                 this.currentValue = data.value;
                 this.updateValue();
                 this.$emit('input',data.value);
-                this.$emit('on-change',data.value);
-                this.dispatch()
-
+                this.$emit('change',data.value);
+                this.dispatch(preFixComp+'form-item', 'on-form-change',data.value)
             }
         }
 	}

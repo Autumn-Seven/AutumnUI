@@ -4,37 +4,131 @@
  * email: fighting20xx@126.com
  */
 
+$radio: #{$css-profix}radio;
 
-$gird: #{$css-profix}radio;
+
+.#{$radio} {
+    & > input[type=radio] {
+        &:checked {
+            border: $border-width-default $border-style-default $primary-color;
+            color:  $primary-color;
+            border-color: $primary-color;
+        }
+    }
+}
 
 
-.#{$gird}--group{
+
+.#{$radio}-group {
     width: 100%;
     position: relative;
     vertical-align: middle;
     line-height: normal;
-    text-align: left;
+    text-align: center;
+    background: $plain-color;
 
-    & .#{$gird}{
-        width: 100%;
+
+    .#{$radio}{
         display: flex;
         position: relative;
+        width: 100%;
+        line-height: $line-height-computed*2.4;
+        white-space: nowrap;
+        cursor: pointer;
 
-        & > input[type=radio] {
+        &-disabled{
+            cursor: not-allowed;
+        }
+
+        .#{$radio}-text{
+            color: $text-color;
+        }
+        .#{$radio}-icon{
+            flex: 1;
+            color: $success-color;
+            text-align: right;
+            margin-right: 4px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        & > input[type=radio]{
             position: absolute;
-            //left: -9999px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            opacity: 0;
+            cursor: pointer;
 
+            & + .#{$radio}-icon-init{
+                display: inline-block;
+            }
+            & + .#{$radio}-icon-checked{
+                display: none;
+            }
 
+            &:checked + .#{$radio}-icon-init {
+                display: none;
+            }
+            &:checked + .#{$radio}-icon-checked {
+                display: inline-block;
+            }
+        }
+
+        &:not(:last-child):after {
+            content: "";
+            position: absolute;
+            // z-index: 1;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: $border-width-default $border-style-default $border-color-split;
+            transform: scaleY(.5) scaleX(1.5);
+            transform-origin: 0 0;
         }
 
 
-        &.horizontal {
-            display: inline-block;
+
+
+
+
+
+
+
+        &.#{$radio}-horizontal{
+            display: inline-flex;
             padding-right: 10px;
             width: auto;
             white-space: nowrap;
+
+            .#{$radio}-text{
+                color: $text-color;
+            }
+            .#{$radio}-icon{
+                display: none;
+            }
+
+            & > input[type=radio]{
+                position: absolute;
+                left: -9999em;
+
+                & + .#{$radio}-text:before {
+                    color: $text-color;
+                    content: "";
+                }
+
+                &:checked + .#{$radio}-text:before {
+                    color: $primary-color;
+                    content: "\E62B";
+                    //display: inline-flex;
+                    //font-size: $font-size-base*2;
+                    //position: absolute;
+                    //right: 0;
+                }
+            }
         }
 
     }
-
 }

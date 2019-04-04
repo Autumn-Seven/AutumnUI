@@ -8,7 +8,7 @@
 $css-profix: autumn__;
 
 //颜色
-$primiary-color: #2d8cf0; //一般交互颜色 （按钮，信息，提示，弹出）
+$primary-color: #2d8cf0; //一般交互颜色 （按钮，信息，提示，弹出）
 $info-color: #2db7f5;
 $success-color: #19be6b;
 $warning-color: #ff9900;
@@ -20,7 +20,7 @@ $transparent-color: transparent;       // 透明色
 $link-color: #2D8cF0l;                     //原有的  链接，输入框 交互色
 $link-hover-hover: tint($link-color, 20%);
 $link-active-hover: shade($link-color, 5%);
-$selected-color: fade($primiary-color, 90%);
+$selected-color: fade($primary-color, 90%);
 
 $tooltip-color: #fff;          //工具提示
 $subsidiary-color: #80848f;     //附加色
@@ -120,7 +120,7 @@ $btn-default-bg: $background-color-base;
 $btn-default-border: $border-color-base;
 
 $btn-primary-color: $text-light-color;
-$btn-primary-bg: $primiary-color;
+$btn-primary-bg: $primary-color;
 $btn-primary-border: $border-color-base;
 
 $btn-info-color: $text-light-color;

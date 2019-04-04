@@ -1079,6 +1079,10 @@
 		min(arr) {
 			return Math.min.apply(null, arr);
 		},
+		/*数组最小值*/
+		oneOf(value, arr) {
+			return arr.indexOf(value) > -1;
+		},
 	};
 	var gidUtil = {
 

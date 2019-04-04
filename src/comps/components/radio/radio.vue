@@ -8,26 +8,34 @@
 
 
 <template>
-        <span v-if="horizontal" :class="[preFixCla]">
-             <input
-                     type="radio"
-                     @click="onClick"
-                     @change="onChange"
-                     :disabled="disabled"
-                     :name="groupName"
-                     :checked="currentValue">
-            <span><slot>{{label}}</slot></span>
-        </span>
-        <span v-else="horizontal" :class="[preFixCla, horizontal]">
-             <input
-                     type="radio"
-                     @click="onClick"
-                     @change="onChange"
-                     :disabled="disabled"
-                     :name="groupName"
-                     :checked="currentValue">
-            <span><slot>{{label}}</slot></span>
-        </span>
+    <label :class="wrapClasses ">
+        <template v-if="horizontal">
+            <input
+                    type="radio"
+                    @click="onClick"
+                    @change="onChange"
+                    :disabled="disabled"
+                    :name="groupName"
+                    :checked="currentValue">
+            <span class='fontIcon iconround' :class="[preFixCla+'-icon-init']"></span>
+            <span class='fontIcon iconradiobox' :class="[preFixCla+'-icon-checked']"></span>
+            <span class='fontIcon iconclose' :class="[preFixCla+'-text']"></span>
+            <span :class="[preFixCla+'-text']"><slot>{{label}}</slot></span>
+          </template>
+
+
+        <template >
+            <span :class="[preFixCla+'-text']"><slot>{{label}}</slot></span>
+            <input
+                    type="radio"
+                    @click="onClick"
+                    @change="onChange"
+                    :disabled="disabled"
+                    :name="groupName"
+                    :checked="currentValue">
+            <span class="iconfont iconcheck" :class="[preFixCla+'-icon']" :style="[{'color': $parent.color}]"></span>
+        </template>
+    </label>
 </template>
 <script>
 	import { preFixCla, preFixComp } from '@/comps/config';
@@ -58,20 +66,29 @@
 		    return {
 				preFixCla:preFixCla+'radio',
 				currentValue:this.value,
-
                 parent:findComponentUpward(this, preFixComp+'radio-group'),
 				group:false,
 				groupName:this.name,
             }
         },
         computed:{
+        	wrapClasses(){
+        		return [
+					this.preFixCla,
+                    {
+
+						[`${this.preFixCla}-checked`]: this.currentValue,
+						[`${this.preFixCla}-disabled`]: this.disabled,
+						[this.preFixCla+'-horizontal']: this.horizontal,
+                    }
+                ]
+            },
 			horizontal(){
                 return (this.parent && this.parent.horizontal === true);
-            }
+            },
         },
         watch:{
-			currentValue(val){
-
+			value(val){
         		if(val === this.trueValue || val ===this.falseValue){
         			this.updateValue();
                 }else {
@@ -100,24 +117,19 @@
             	if(this.disabled) return false;
 
             	const checked = event.target.checked;
-            	this.currentValue = checked;
-            	const value = checked ? this.trueValue: falseValue;
-            	this.$emit('input',value);
+				const value = checked ? this.trueValue: falseValue;
+				this.$emit('input',value);
 
-            	if(this.group){
-					this.$parent.change({value:this.label, checked:this.currentValue});
-                }else {
-					this.$emit('on-change', value);
+            	if(this.group){        //当为组的时候， 只有 onChange 为true的时候 才触发父组件更新，   不能设为false的时候更新父组件，那样就没有一个选中了。
+					this.$parent.change({value:this.label, checked:value});
                 }
-
-
-
             },
             onClick(event){
             	if(this.disabled) return;
 
-            	if(!this.group){
+            	if(!this.group){      //当为单选框的时候，  单机就可以改变状态。
 					this.currentValue = !this.currentValue;
+					this.$emit('input',this.currentValue);
                 }
             },
 			updateValue(){

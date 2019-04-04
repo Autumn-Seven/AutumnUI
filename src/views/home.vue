@@ -13,8 +13,8 @@
         <br><br>
         <autumn-button type="primary" disabled>禁用</autumn-button>
         <autumn-button color="red" bgColor="green" borderColor="yellow" >自定义颜色</autumn-button>
-        <autumn-button type="primary" icon="add">添加图标</autumn-button>
-        <autumn-button color="#56f521" bgColor="#854253" icon="close">自定义</autumn-button>
+        <autumn-button type="primary" icon="iconadd">添加图标</autumn-button>
+        <autumn-button color="#56f521" bgColor="#854253" icon="iconclose">自定义</autumn-button>
         <autumn-button  icon="camera" round>添加图标</autumn-button>
 
         <br><br>
@@ -44,22 +44,30 @@
         <autumn-tag type="error" closeable>error</autumn-tag>
 
         <h4>表单</h4>
-        <autumn-radio v-model="radio">error</autumn-radio>
+        <autumn-radio v-model="radio">{{radio}}</autumn-radio>
+        <autumn-radio v-model="radio">{{radio}}</autumn-radio>
+        <autumn-radio v-model="radio" disabled>{{radio}}</autumn-radio>
 
 
         <autumn-radio-group v-model="radio2">
-            <autumn-radio label="1">error</autumn-radio>
-            <autumn-radio label="2">error</autumn-radio>
+            <autumn-radio label="炸鸡" >{{radio2}}</autumn-radio>
+            <autumn-radio label="汉堡">{{radio2}}</autumn-radio>
+            <autumn-radio label="啤酒">{{radio2}}</autumn-radio>
+            <autumn-radio label="烧烤">{{radio2}}</autumn-radio>
         </autumn-radio-group>
 
+
+
+        <!--<autumn-radio v-model="radio2">error</autumn-radio>-->
+        <autumn-input >error</autumn-input>
 
         <autumn-radio-group v-model="radio2" horizontal>
-            <autumn-radio label="1">error</autumn-radio>
-            <autumn-radio label="2">error</autumn-radio>
+            <autumn-radio label="炸鸡">炸鸡</autumn-radio>
+            <autumn-radio label="汉堡">汉堡</autumn-radio>
+            <autumn-radio label="啤酒">啤酒</autumn-radio>
+            <autumn-radio label="烧烤">烧烤</autumn-radio>
         </autumn-radio-group>
 
-        <autumn-radio v-model="radio2">error</autumn-radio>
-        <autumn-input >error</autumn-input>
 
 
         <h4>图标</h4>
@@ -106,7 +114,7 @@
 				msg: 'Welcome',
                 iconList:iconList,
                 radio:false,
-                radio2:'2',
+                radio2:'炸鸡',
 			}
 		},
         computed:{
