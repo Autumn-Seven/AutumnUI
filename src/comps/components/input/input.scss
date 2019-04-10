@@ -1,0 +1,61 @@
+/**
+ * Created by Seven on 2019/3/29.
+ * project: AutumnUI
+ * email: fighting20xx@126.com
+ */
+
+$input-pre: #{$css-profix}input;
+
+
+.#{$input-pre}--wrap{
+    display: flex;
+    width: 100%;
+    flex: 1;
+    line-height: normal;
+    vertical-align: middle;
+
+
+    .#{$input-pre}{
+        position: relative;
+        @include size(100%, 100%);
+        align-items: center;
+
+        >input {
+            display: block;
+            @include size(100%, 100%);
+            border: none;
+            font-size: inherit;
+            background: transparent;
+
+            &.is-right{
+                text-align: right;
+            }
+        }
+
+        &:before {
+            content: "*";
+            position: absolute;
+            left: -7px;
+            font-size: 14px;
+            color: rgb(255, 68, 68);
+            display: none;
+        }
+        & .#{$input-pre}--close{
+            height: 2rem;
+            width: 2rem;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+
+            & span{
+                margin-left: 0;
+                font-size: 1.5rem;
+                color: #c8c8c8;
+            }
+        }
+
+    }
+}
+

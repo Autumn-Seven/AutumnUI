@@ -1,27 +1,25 @@
 <template>
-    <button
-            class="autumn__btn"
-            @click="handleClick"
+    <div
             :style="{'backgroundColor': bgColor, 'color': color, 'borderColor': borderColor}"
             :class="showClass"
             :disabled="disabled"
     >
-        <span class="iconfont " :class="icon"></span>
-        <slot></slot></button>
+
+        <slot></slot>
+        <span class="iconfont " :class="'icon-'+icon" v-if="closeable" @click="closeAction"></span>
+    </div>
 </template>
 <script>
+    const preFixClass = 'autumn__tag';
+
 	export default {
-		name: 'autumn-button',
+		name: 'autumn-tag',
 		props: {
 			type: {
 				type: String,
 				default: 'default'
 			},
-			long: Boolean,
-			loading: {
-				type: Boolean,
-				default: false
-			},
+
 			noRadius: {
 				type: Boolean,
 				default: false
@@ -29,7 +27,7 @@
 
 			icon: {
 				type: String,
-				default: ''
+				default: 'close'
 			},
 			color: {
 				type: String,
@@ -45,17 +43,18 @@
 			},
 			block: Boolean,
 			disabled: Boolean,
-			plain: Boolean,
-			round: Boolean
+			round: Boolean,
+			long: Boolean,
+			closeable: Boolean,
 		},
 		computed:{
 			showClass () {
 				return [
-					'autumn__btn--'+this.type,
+					`${preFixClass}`,
+					`${preFixClass}--${this.type}`,
                     {
-						'autumn__btn--block': this.block,
-						'autumn__btn--hasIcon': this.icon !== '',
-                    	'is-plain': this.plain,
+						[`${preFixClass}--block`]: this.block,
+						[`${preFixClass}--closeable`]: this.closeable,
                         'is-round': this.round,
                         'is-long': this.long,
                         'no-radius': this.noRadius
@@ -64,10 +63,9 @@
             }
         },
 		methods: {
-			handleClick: function (event) {
-				if (this.disabled) return;
-				this.$emit('click', event)
-			}
+			closeAction: function (event) {
+				this.$emit('close', event)
+			},
 		}
 	}
 
