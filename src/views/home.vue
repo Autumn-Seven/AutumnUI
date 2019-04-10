@@ -44,25 +44,21 @@
         <autumn-tag type="error" closeable>error</autumn-tag>
 
         <h4>表单</h4>
+
         <autumn-radio v-model="radio">{{radio}}</autumn-radio>
         <autumn-radio v-model="radio">{{radio}}</autumn-radio>
         <autumn-radio v-model="radio" disabled>{{radio}}</autumn-radio>
 
 
-        <autumn-radio-group v-model="radio2">
-            <autumn-radio label="炸鸡" >{{radio2}}</autumn-radio>
-            <autumn-radio label="汉堡">{{radio2}}</autumn-radio>
-            <autumn-radio label="啤酒">{{radio2}}</autumn-radio>
-            <autumn-radio label="烧烤">{{radio2}}</autumn-radio>
+        <autumn-radio-group v-model="radio2" >
+            <autumn-radio label="炸鸡" disabled>炸鸡</autumn-radio>
+            <autumn-radio label="汉堡">汉堡</autumn-radio>
+            <autumn-radio label="啤酒">啤酒</autumn-radio>
+            <autumn-radio label="烧烤">烧烤</autumn-radio>
         </autumn-radio-group>
 
-
-
-        <!--<autumn-radio v-model="radio2">error</autumn-radio>-->
-        <autumn-input >error</autumn-input>
-
         <autumn-radio-group v-model="radio2" horizontal>
-            <autumn-radio label="炸鸡">炸鸡</autumn-radio>
+            <autumn-radio label="炸鸡" disabled>炸鸡</autumn-radio>
             <autumn-radio label="汉堡">汉堡</autumn-radio>
             <autumn-radio label="啤酒">啤酒</autumn-radio>
             <autumn-radio label="烧烤">烧烤</autumn-radio>

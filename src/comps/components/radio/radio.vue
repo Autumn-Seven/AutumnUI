@@ -9,7 +9,7 @@
 
 <template>
     <label :class="wrapClasses ">
-        <template v-if="horizontal">
+        <template v-if="horizontal || !group">
             <input
                     type="radio"
                     @click="onClick"
@@ -17,14 +17,11 @@
                     :disabled="disabled"
                     :name="groupName"
                     :checked="currentValue">
-            <span class='fontIcon iconround' :class="[preFixCla+'-icon-init']"></span>
-            <span class='fontIcon iconradiobox' :class="[preFixCla+'-icon-checked']"></span>
-            <span class='fontIcon iconclose' :class="[preFixCla+'-text']"></span>
-            <span :class="[preFixCla+'-text']"><slot>{{label}}</slot></span>
-          </template>
-
-
-        <template >
+            <span v-if="!currentValue" class="iconfont iconround" :class="[preFixCla+'-icon-init']" ></span>
+            <span v-else="currentValue"  class="iconfont iconradiobox" :class="[preFixCla+'-icon-checked']" ></span>
+            <span :class="[  preFixCla+'-text']"><slot>{{label}}</slot></span>
+        </template>
+        <template v-else>
             <span :class="[preFixCla+'-text']"><slot>{{label}}</slot></span>
             <input
                     type="radio"
@@ -76,10 +73,9 @@
         		return [
 					this.preFixCla,
                     {
-
 						[`${this.preFixCla}-checked`]: this.currentValue,
 						[`${this.preFixCla}-disabled`]: this.disabled,
-						[this.preFixCla+'-horizontal']: this.horizontal,
+						[this.preFixCla+'-horizontal']: this.horizontal || !this.group,
                     }
                 ]
             },
