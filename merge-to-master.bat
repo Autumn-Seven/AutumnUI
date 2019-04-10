@@ -1,4 +1,4 @@
-git checkout master;
-git merge dev;
-git push;
-git checkout dev;
+git checkout master
+git merge dev
+git push
+git checkout dev
