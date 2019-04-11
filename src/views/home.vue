@@ -15,16 +15,16 @@
         <autumn-button color="red" bgColor="green" borderColor="yellow" >自定义颜色</autumn-button>
         <autumn-button type="primary" icon="iconadd">添加图标</autumn-button>
         <autumn-button color="#56f521" bgColor="#854253" icon="iconclose">自定义</autumn-button>
-        <autumn-button  icon="camera" round>添加图标</autumn-button>
+        <autumn-button  icon="camera" round>添加图标222</autumn-button>
 
         <br><br>
         <autumn-button  icon="camera" long  round>100%宽度</autumn-button>
 
         <br><br>
         <antumn-button-group>
-            <autumn-button type="primary" icon="camera"  >item1</autumn-button>
-            <autumn-button type="warning" icon="camera"  >item2</autumn-button>
-            <autumn-button type="success" icon="camera"  >item332132132</autumn-button>
+            <autumn-button type="primary" icon="iconadd"  >item1</autumn-button>
+            <autumn-button type="warning" icon="iconadd"  >item2</autumn-button>
+            <autumn-button type="success" icon="iconadd"  >item332132132</autumn-button>
         </antumn-button-group>
 
         <h4>标签</h4>
@@ -124,6 +124,9 @@
 </script>
 
 <style scoped>
+    .hello{
+        width: 100%;
+    }
     h4{
         background-color: azure;
         text-align: left;

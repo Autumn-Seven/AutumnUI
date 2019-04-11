@@ -1,7 +1,9 @@
 <template>
     <div id="app">
         <div class="logo-wrap">
-            <img src="./assets/autumn_ui.png">
+            <a href="https://github.com/kisstheair/AutumnUI">
+                <img src="./assets/autumn_ui.png">
+            </a>
         </div>
         <div class="content-page">
             <router-view/>
@@ -18,6 +20,8 @@
 <style lang="scss">
     body{
         margin: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     #app {
@@ -30,6 +34,7 @@
         img{
             width: 30%;
             min-width: 300px;
+            cursor: pointer;
         }
 
         .content-page{

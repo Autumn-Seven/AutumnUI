@@ -28,7 +28,6 @@ const components = [
 	Grids,
 ];
 
-console.log(button);
 
 const install = function (Vue) {
     if(install.installed) return;

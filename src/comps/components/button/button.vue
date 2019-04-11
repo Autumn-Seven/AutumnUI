@@ -6,7 +6,7 @@
             :class="showClass"
             :disabled="disabled"
     >
-        <span class="iconfont " :class="'icon-'+icon"></span>
+        <span class="iconfont " :class="icon"></span>
         <slot></slot></button>
 </template>
 <script>

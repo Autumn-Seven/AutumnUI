@@ -1,7 +1,9 @@
-<template>
+<template >
     <button
             class="autumn__btn"
-            @click="handleClick"
+
+            onclick="handleClick"
+
             :style="{'backgroundColor': bgColor, 'color': color, 'borderColor': borderColor}"
             :class="showClass"
             :disabled="disabled"
@@ -65,7 +67,11 @@
         },
 		methods: {
 			handleClick: function (event) {
+				alert(123)
+				console.log(123)
 				if (this.disabled) return;
+
+				console.log(this.icon)
 				this.$emit('click', event)
 			}
 		}
