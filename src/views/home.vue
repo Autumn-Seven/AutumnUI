@@ -75,6 +75,10 @@
         </autumn-grids>
 
         <br><br>
+
+        <h4>Toast</h4>
+        <autumn-button type="primary" @click="toastClick">Toast</autumn-button>
+
         <br><br>
         <br><br>
         <br><br>
@@ -113,13 +117,21 @@
                 radio2:'炸鸡',
 			}
 		},
-        computed:{
-
+        methods:{
+            toastClick(){
+                this.$toast.text({
+                    content:'测试一下呀！',
+                    callBack:function() {
+                        this.$toast.text({
+                            content:'测试成功',
+                            time:1000,
+                            direction:'center'
+                        })
+                    }
+                });
+            }
         },
-        mounted (){
 
-
-        }
 	}
 </script>
 

@@ -3,3 +3,24 @@
  * project: AutumnUI
  * email: fighting20xx@126.com
  */
+
+$toast-pre: #{$css-profix}toast;
+
+.#{$toast-pre} {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    color: #fff;
+    z-index: 3001;
+    font-size: $font-size-small;
+    line-height: 1.2;
+    @include border-radius;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: rgba(39, 39, 39, .7);
+    padding: 12px;
+}
