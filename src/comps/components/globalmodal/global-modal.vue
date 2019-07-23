@@ -13,18 +13,20 @@
 	export default {
 		name: preFixComp+'modal',
 		props:{
-			value: {
-				type:[Boolean, String, Number],
-				default:false,
+			type: {
+                validator (value) {
+                    return  ['alert', 'confirm', 'prompt'].indexOf(value) > -1;
+                },
+                default: 'default',
 			},
-			trueValue: {
-				type:[Boolean, String, Number],
-				default:true,
+            value: {
+				type:  String ,
+				default:'',
 			},
-			falseValue: {
-				type:[Boolean, String, Number],
-				default:false,
-			},
+			title:{
+			    type:String,
+                default:'',
+            },
 			name:{
 				type:String,
 			},

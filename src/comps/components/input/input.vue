@@ -9,15 +9,20 @@
     <div :class="inputWrapClass" >
         <input ref="input"
                :type="type"
-               v-model="currentValue"
+               :value="currentValue"
                :name="name"
-               @focus="onFocus"
-               @blur="onBlur"
                :maxlength="max"
                :placeholder="placeholder"
                :autocomplete="autocomplete"
                :readonly="readonly"
+               :autofocus="autofocus"
                :disabled="disabled"
+
+               @focus="onFocus"
+               @blur="onBlur"
+               @input="handleInput"
+               @change="handleChange"
+
                :class="[{'is-right': right},preFixCla + 'input']"
         >
         <div :class="[preFixCla + 'input--close']"
@@ -43,7 +48,7 @@
         props: {
 			type:{
 				validator(value){
-					return value.indexOf(['text','password','url','email','date']);
+					return value.indexOf(['text','number','password','url','email','date','time','datetime','tel']);
                 },
 				default:'text',
 
@@ -99,11 +104,27 @@
         },
         methods:{
 			onFocus(event){
-				this.$emit('focus' ,event.target.value);
+                this.$refs.input.focus();
+				this.$emit('focus' ,event);
             },
 			onBlur(event){
-				this.$emit('blur',event.target.value);
-            }
+                this.$refs.input.blur();
+				this.$emit('blur',event);
+            },
+            handleInput(event){
+                this.$emit('input', value);
+                this.setCurrentValue(value);
+                this.$emit('on-change', event);
+            },
+            handleChange(event){
+                this.$emit('on-input-change', event);
+
+            },
+
+            setCurrentValue (value) {
+                this.currentValue = value;
+                this.dispatch('FormItem', 'on-form-change', value);
+            },
         }
 	}
 
